@@ -8,6 +8,11 @@ dependencies:
         - docker info
         - docker build -t firstlookmedia/elasticsearch-ecs .
 
+test:
+    override:
+        - docker run -d -p 9200:9200 firstlookmedia/elasticsearch-ecs ; sleep 10
+        - curl --retry 10 --retry-delay 5 -v http://localhost:9200
+
 deployment:
 
     develop:
