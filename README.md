@@ -11,6 +11,8 @@ docker build \
 
 ## Test
 
+This will fail if not run in EC2:
+
 ```
 docker run \
     --rm \

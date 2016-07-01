@@ -1,7 +1,7 @@
 
 variable "name" { default = "elasticsearch" }
 
-variable "image_elasticsearch" { default = "firstlookmedia/elasticsearch-ecs:latest" }
+variable "image_elasticsearch" { default = "firstlookmedia/elasticsearch-ecs:master" }
 
 variable "vpc_id" {}
 variable "vpc_cidr" {}
