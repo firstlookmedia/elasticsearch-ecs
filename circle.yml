@@ -12,8 +12,8 @@ test:
     override:
         - >
             docker run -d -p 9200:9200 firstlookmedia/elasticsearch-ecs
-            elasticsearch -Des.network.publish_host=localhost ; sleep 10
-        - curl --retry 30 --retry-delay 5 -v http://localhost:9200
+            elasticsearch -Des.network.publish_host=0.0.0.0 ; sleep 20
+        - curl --retry 10 --retry-delay 5 -v http://0.0.0.0:9200
 
 deployment:
 
