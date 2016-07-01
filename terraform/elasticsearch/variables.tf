@@ -12,6 +12,7 @@ variable "private_subnet_ids" {}
 
 variable "key_name" {}
 
+variable "instance_ami" { default = "ami-8f7687e2" }
 variable "instance_type" { default = "t2.micro" }
 variable "instance_count" { default = 2 }
 

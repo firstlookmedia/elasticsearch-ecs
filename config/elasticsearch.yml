@@ -14,4 +14,3 @@ discovery.ec2.host_type: "private_ip"
 discovery.ec2.ping_timeout: "10s"
 
 discovery.zen.ping.multicast.enabled: false
-

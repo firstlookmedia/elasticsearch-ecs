@@ -9,7 +9,7 @@ resource "aws_ecs_cluster" "elasticsearch" {
 }
 
 resource "aws_instance" "ecs-elasticsearch" {
-    ami                    = "ami-8f7687e2"
+    ami                    = "${var.instance_ami}"
     instance_type          = "${var.instance_type}"
 
     count = "${var.instance_count}"

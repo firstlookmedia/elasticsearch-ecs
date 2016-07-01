@@ -1,0 +1,24 @@
+
+machine:
+    services:
+        - docker
+
+deployment:
+
+    develop:
+        branch: develop
+        commands:
+            - docker info
+            - docker build -t firstlookmedia/elasticsearch-ecs .
+            - docker tag firstlookmedia/elasticsearch-ecs firstlookmedia/elasticsearch-ecs:develop
+            - docker login -u $DOCKER_USER -p $DOCKER_PASS
+            - docker push firstlookmedia/elasticsearch-ecs:develop
+
+    master:
+        branch: master
+        commands:
+            - docker info
+            - docker build -t firstlookmedia/elasticsearch-ecs .
+            - docker tag firstlookmedia/elasticsearch-ecs firstlookmedia/elasticsearch-ecs:master
+            - docker login -u $DOCKER_USER -p $DOCKER_PASS
+            - docker push firstlookmedia/elasticsearch-ecs:master
